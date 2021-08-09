@@ -1,0 +1,70 @@
+.icon-bar {
+	width: 100%; /* Full-width */
+	background-color: #555; /* Dark-grey background */
+	overflow: auto; /* Overflow due to float */
+}
+
+.icon-bar a {
+	float: left; /* Float links side by side */
+	text-align: center; /* Center-align text */
+	width: 16.665%; /* Equal width (5 icons with 20% width each = 100%) */
+	padding: 12px 0; /* Some top and bottom padding */
+	transition: all 0.3s ease; /* Add transition for hover effects */
+	color: white; /* White text color */
+	text-decoration: none;
+	font-size: 36px; /* Increased font size */
+}
+
+.icon-bar a:hover {
+	background-color: #000; /* Add a hover color */
+}
+
+.active {
+	background-color: #4CAF50; /* Add an active/current color */
+}
+
+.vertical-menu {
+ 	display:table;
+	width: 80%;
+	margin: auto;
+}
+
+.vertical-menu a {
+	background-color: #eee; /* Grey background color */
+	color: black; /* Black text color */
+	display: block; /* Make the links appear below each other */
+	padding: 12px; /* Add some padding */
+	text-decoration: none; /* Remove underline from links */
+	transition: all 0.3s ease; /* Add transition for hover effects */
+	font-family: arial;
+	font-size: 15px;
+}
+
+.vertical-menu a:hover {
+	background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.vertical-menu b {
+	background-color: #777; /* Grey background color */
+	color: white; /* Black text color */
+	display: block; /* Make the links appear below each other */
+	padding: 12px; /* Add some padding */
+	text-decoration: none; /* Remove underline from links */
+	font-family: roboto;
+	font-size: 15px;
+}
+
+.vertical-menu h1 {
+	background-color: #eee; /* Grey background color */
+	color: white; /* Black text color */
+	text-decoration: none; /* Remove underline from links */
+	font-family: arial;
+	padding-top: 10px;
+	font-size: 0px;
+	width: 100%;
+}
+
+.vertical-menu a.active {
+	background-color: #4CAF50; /* Add a green color to the "active/current" link */
+	color: white;
+}
