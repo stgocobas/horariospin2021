@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<!-- Inicializar SQL y PHP-->
+<?php
+session_start();
+$host = "localhost"; /* Host name */
+$user = "root"; /* User */
+$password = ""; /* Password */
+$dbname = "colegio"; /* Database name */
+
+$con = mysqli_connect($host, $user, $password,$dbname);
+if (!$con) { die("Conexión fallida: " . mysqli_connect_error()); }
+?>
+
+<html>
+<!-- Referencias -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" id="estilo1" href="imagenes.css" type="text/css" media="all">
+<link rel="stylesheet" id="estilo1" href="texto.css" type="text/css" media="all">
+<link rel="stylesheet" id="estilo1" href="barra_menu.css" type="text/css" media="all">
+<link rel="stylesheet" id="estilo1" href="noticias.css" type="text/css" media="all">
+
+<?php
+echo("<h1>Generador de Horario PIN 2021-2</h1>");
+?>
+
+<!-- Formulario -->
+<div class="col-1">
+	<form method="post" action="">
+		<! -- img src="https://portal.ucm.cl//content/uploads/2016/12/banner_Fac_educacion-UCM.png" style="float: left;" --!>
+	</form>
+</div>
+<div class="col-2">
+	<div class="login">
+		<form method="post" action="#">
+			<h3>Bienvenid@. Por favor, escribe el número de sección en el que estás inscrit@ para los siguientes ramos:</h4>
+			
+			<h4><label for="ELT121">Fundamentos Sociológicos (Secc. 1): </label><input type="text" id="ELT121" name="ELT121"></h4>
+			<h4><label for="ELT122">Fundamentos Psicológicos (Secc. 1): </label><input type="text" id="ELT122" name="ELT122" ></h4>
+			<h4><label for="ELT123">Competencias Comunicativas II (Secc. 1, 2 o 3): </label><input type="text" id="ELT123" name="ELT123" ></h4>
+			<h4><label for="ELT124">Gramática Contextualizada II (Secc. 1, 2 o 3): </label><input type="text" id="ELT124" name="ELT124" ></h4>
+			<h4><label for="ELT125">Fonética Inglesa II (Secc. 1, 2 o 3): </label><input type="text" id="ELT125" name="ELT125" ></h4>
+			<h4><label for="ELT126">Introducción a la Enseñanza (Secc. 1, 2 o 3): </label><input type="text" id="ELT126" name="ELT126" ></h4>
+			<input type="submit" value="Generar horario" name="but_submit" id="but_submit" />
+		</form>
+	</div>
+</div>
+<div><hr style="width:100%;display:inline-block;" class="separador"></div>
+<br>
+
+<?php
+// AL APRETAR EL BOTON SUBMIT Y RELLENAR LOS CAMPOS CULIAOS
+if($_POST['but_submit'] && $_POST['ELT121'] && $_POST['ELT122'] && $_POST['ELT123'] && $_POST['ELT124'] && $_POST['ELT125'] && $_POST['ELT126'])
+{
+    $ELT121 = $_POST['ELT121'];
+    $ELT122 = $_POST['ELT122'];
+	$ELT123 = $_POST['ELT123'];
+	$ELT124 = $_POST['ELT124'];
+	$ELT125 = $_POST['ELT125'];
+	$ELT126 = $_POST['ELT126'];
+	
+	$_SESSION['ELT121'] = $ELT121;
+	$_SESSION['ELT122'] = $ELT122;
+	$_SESSION['ELT123'] = $ELT123;
+	$_SESSION['ELT124'] = $ELT124;
+	$_SESSION['ELT125'] = $ELT125;
+	$_SESSION['ELT126'] = $ELT126;
+	
+	header("Location: horario_tabla.php");
+	exit();
+}
+?>
