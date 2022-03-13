@@ -3,13 +3,6 @@
 <!-- Inicializar SQL y PHP-->
 <?php
 session_start();
-$host = "localhost"; /* Host name */
-$user = "root"; /* User */
-$password = ""; /* Password */
-$dbname = "colegio"; /* Database name */
-
-$con = mysqli_connect($host, $user, $password,$dbname);
-if (!$con) { die("Conexión fallida: " . mysqli_connect_error()); }
 ?>
 
 <html>
